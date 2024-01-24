@@ -2,12 +2,14 @@
   "name": "express-starter",
   "version": "1.0.0",
   "description": "starter express using JavaScript",
-  "main": "index.js",
+  "main": "src/app.js",
   "author": "tnnz20",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "jest -i"
+    "dev": "nodemon -L src/app.js",
+    "test": "jest -i",
+    "seeds": "node ./prisma/seeds/seed.js"
   },
   "jest": {
     "transform": {
@@ -15,8 +17,10 @@
     }
   },
   "dependencies": {
+    "@prisma/client": "^5.8.1",
     "express": "^4.18.2",
-    "joi": "^17.12.0"
+    "joi": "^17.12.0",
+    "nodemon": "^3.0.3"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.8",
@@ -24,7 +28,10 @@
     "@types/jest": "^29.5.11",
     "@types/supertest": "^6.0.2",
     "babel-jest": "^29.7.0",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.3.2",
     "jest": "^29.7.0",
+    "prisma": "^5.8.1",
     "supertest": "^6.3.4"
   }
 }
